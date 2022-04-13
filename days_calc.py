@@ -1,3 +1,6 @@
+from ast import Num
+
+
 def get_dates():
     """
     Gets the two dates to do the difference
@@ -9,13 +12,13 @@ def get_dates():
 
     return date_1, date_2
 
-def check_date_format(date):
+def check_date_format(date: str):
     """
     Checks for wrong formatted date input
     """
     print("Wrong date format")
 
-def sort_date(date1, date2):
+def sort_date(date1: str, date2: str):
     """
     Gets which is the earliest and latest date
     """
@@ -57,7 +60,7 @@ def sort_date(date1, date2):
     
     return upper_limit_date, lower_limit_date
 
-def years_between_no(date1, date2):
+def years_between_no(date1: str, date2: str):
     year1 = date1.split('-')[2]
     year2 = date2.split('-')[2]
     diff = int(year1) - int(year2)
@@ -66,7 +69,7 @@ def years_between_no(date1, date2):
     
     return diff
 
-def days_to_end_year(splitDate):
+def days_to_end_year(splitDate: list):
     """Calculates the days to end the year"""
     leap_year = [31,29,31,30,31,30,31,31,30,31,30,31]
     non_leap_year = [31,28,31,30,31,30,31,31,30,31,30,31]
@@ -105,7 +108,7 @@ def days_to_end_year(splitDate):
     remaining_days = rm_days_month + rm_month_days
     return remaining_days
 
-def day_of_the_year(splitDate):
+def day_of_the_year(splitDate: list):
     """
     Gets the day of the year eg. 200th day
     """
@@ -118,7 +121,7 @@ def day_of_the_year(splitDate):
     
     return day
 
-def days_in_year_intervals(diff, earlierDate):
+def days_in_year_intervals(diff: Num, earlierDate: Num):
     """
     Calculates the number of leap years and no of non leap years
     """
@@ -136,7 +139,7 @@ def days_in_year_intervals(diff, earlierDate):
     return total_days
 
 
-def days_calc(diff, earlierDate, latterDate):
+def days_calc(diff: Num, earlierDate: list, latterDate: list):
     """
     Does the days calculation based on the difference of the years in the dates (diff)
     """
